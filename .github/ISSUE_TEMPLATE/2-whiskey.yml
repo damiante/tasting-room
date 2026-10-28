@@ -1,0 +1,104 @@
+name: "Whiskey"
+description: "Log a whiskey you have tried."
+labels: ["whiskey"]
+body:
+  - type: input
+    attributes:
+      label: "Distillery"
+      placeholder: "Lagavulin"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: "Style"
+      placeholder: "Single malt Scotch, bourbon, rye"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Age"
+      placeholder: "16 years"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "ABV"
+      placeholder: "43%"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Region"
+      placeholder: "Islay, Scotland"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: "### Flavour profile\n0 means absent, 5 means it dominates."
+  - type: dropdown
+    attributes:
+      label: "Sweet"
+      description: "Vanilla, honey, toffee"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Fruity"
+      description: "Apple, citrus, dried fruit"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Floral"
+      description: "Heather, grass, blossom"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Spicy"
+      description: "Pepper, cinnamon, clove"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Oak"
+      description: "Wood, tannin, char"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Peaty"
+      description: "Smoke, iodine, campfire"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Rating"
+      options: ["1 - not for me", "2 - fine", "3 - good", "4 - very good", "5 - outstanding"]
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Tasting notes"
+      placeholder: "Where you were, who recommended it, nose, palate, finish..."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Photo"
+      description: "Optional. Drag an image in here; it goes at the top of the page."
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Link"
+      description: "Optional. Whiskybase page for this bottling."
+      placeholder: "https://"
+    validations:
+      required: false

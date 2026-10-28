@@ -1,0 +1,98 @@
+name: "Beer"
+description: "Log a beer you have tried."
+labels: ["beer"]
+body:
+  - type: input
+    attributes:
+      label: "Brewery"
+      placeholder: "Guinness"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: "Style"
+      placeholder: "Irish stout, West Coast IPA, saison"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "ABV"
+      placeholder: "4.2%"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Origin"
+      placeholder: "Dublin, Ireland"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: "### Flavour profile\n0 means absent, 5 means it dominates."
+  - type: dropdown
+    attributes:
+      label: "Bitter"
+      description: "Hop bitterness, mostly on the finish"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Hoppy"
+      description: "Citrus, pine, tropical or grassy hop aroma"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Malty"
+      description: "Bread, biscuit, caramel"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Roasty"
+      description: "Coffee, dark chocolate, burnt toast"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Fruity"
+      description: "Yeast esters: banana, stone fruit, berries"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Sour"
+      description: "Tart, acidic or funky"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Rating"
+      options: ["1 - not for me", "2 - fine", "3 - good", "4 - very good", "5 - outstanding"]
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Tasting notes"
+      placeholder: "Where you were, who recommended it, nose, palate, finish..."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Photo"
+      description: "Optional. Drag an image in here; it goes at the top of the page."
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Link"
+      description: "Optional. Untappd page for this beer."
+      placeholder: "https://"
+    validations:
+      required: false

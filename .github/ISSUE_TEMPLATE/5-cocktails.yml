@@ -1,0 +1,98 @@
+name: "Cocktails"
+description: "Log a cocktail you have tried."
+labels: ["cocktails"]
+body:
+  - type: input
+    attributes:
+      label: "Where"
+      placeholder: "The bar, or home, and who made it"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: "Base spirit"
+      placeholder: "Gin, rye, mezcal"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: "### Flavour profile\n0 means absent, 5 means it dominates."
+  - type: dropdown
+    attributes:
+      label: "Sweet"
+      description: "Sugar, syrups, liqueurs"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Sour"
+      description: "Citrus, acidity"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Bitter"
+      description: "Amaro, bitters, Campari"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Boozy"
+      description: "How strongly the spirit comes through"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Herbal"
+      description: "Vermouth, chartreuse, fresh herbs"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Fruity"
+      description: "Fruit juice, fruit liqueur, garnish"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Rating"
+      options: ["1 - not for me", "2 - fine", "3 - good", "4 - very good", "5 - outstanding"]
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Ingredients"
+      placeholder: "- 60 ml rye\n- 30 ml sweet vermouth\n- 2 dashes Angostura"
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Method"
+      placeholder: "Stir with ice, strain into a chilled coupe, garnish with a cherry."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Tasting notes"
+      placeholder: "Where you were, who recommended it, nose, palate, finish..."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Photo"
+      description: "Optional. Drag an image in here; it goes at the top of the page."
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Link"
+      description: "Optional. Recipe page, e.g. on Difford's Guide."
+      placeholder: "https://"
+    validations:
+      required: false

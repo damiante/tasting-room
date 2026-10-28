@@ -1,0 +1,104 @@
+name: "Wine"
+description: "Log a wine you have tried."
+labels: ["wine"]
+body:
+  - type: input
+    attributes:
+      label: "Producer"
+      placeholder: "Penfolds"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: "Grape"
+      placeholder: "Shiraz, or the blend"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Vintage"
+      placeholder: "2019"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Region"
+      placeholder: "Barossa Valley, Australia"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Style"
+      placeholder: "Red, white, ros\u00e9, sparkling, fortified"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: "### Flavour profile\n0 means absent, 5 means it dominates."
+  - type: dropdown
+    attributes:
+      label: "Sweetness"
+      description: "Dry at 0, lusciously sweet at 5"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Acidity"
+      description: "Mouth-watering freshness"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Tannin"
+      description: "Drying grip on the gums (mostly reds)"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Alcohol"
+      description: "Warmth in the throat"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Body"
+      description: "Light like water, or heavy like cream"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Finish"
+      description: "How long the flavour lingers"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Rating"
+      options: ["1 - not for me", "2 - fine", "3 - good", "4 - very good", "5 - outstanding"]
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Tasting notes"
+      placeholder: "Where you were, who recommended it, nose, palate, finish..."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Photo"
+      description: "Optional. Drag an image in here; it goes at the top of the page."
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Link"
+      description: "Optional. Vivino page for this wine."
+      placeholder: "https://"
+    validations:
+      required: false

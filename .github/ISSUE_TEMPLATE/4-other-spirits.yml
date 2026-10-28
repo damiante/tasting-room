@@ -1,0 +1,104 @@
+name: "Other spirits"
+description: "Log a other spirit you have tried."
+labels: ["other-spirits"]
+body:
+  - type: input
+    attributes:
+      label: "Producer"
+      placeholder: "Del Maguey"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: "Spirit"
+      placeholder: "Rum, tequila, cognac, mezcal"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Age"
+      placeholder: "Joven, 8 years, VSOP"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "ABV"
+      placeholder: "40%"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Origin"
+      placeholder: "Oaxaca, Mexico"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: "### Flavour profile\n0 means absent, 5 means it dominates."
+  - type: dropdown
+    attributes:
+      label: "Sweet"
+      description: "Sugar, molasses, honey"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Fruity"
+      description: "Tropical, stone or dried fruit"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Herbal"
+      description: "Grass, agave, green notes"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Spicy"
+      description: "Pepper, baking spice"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Woody"
+      description: "Barrel, vanilla, tannin"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Smoky"
+      description: "Smoke, ash, roast"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Rating"
+      options: ["1 - not for me", "2 - fine", "3 - good", "4 - very good", "5 - outstanding"]
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Tasting notes"
+      placeholder: "Where you were, who recommended it, nose, palate, finish..."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Photo"
+      description: "Optional. Drag an image in here; it goes at the top of the page."
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Link"
+      description: "Optional. Producer or review page for this bottle."
+      placeholder: "https://"
+    validations:
+      required: false

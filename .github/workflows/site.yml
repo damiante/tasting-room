@@ -1,0 +1,76 @@
+name: Site
+
+on:
+  push:
+    branches: [main]
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    # A /post comment publishes only when the repo owner wrote both the issue and the comment.
+    # Comments work on closed issues too, so commenting /post again updates an entry.
+    if: >-
+      github.event_name != 'issue_comment' || (
+        !github.event.issue.pull_request &&
+        startsWith(github.event.comment.body, '/post') &&
+        github.event.comment.user.login == github.repository_owner &&
+        github.event.issue.user.login == github.repository_owner)
+    runs-on: ubuntu-latest
+    # Job-level so unrelated comments (skipped runs) can't bump a queued /post.
+    concurrency:
+      group: site
+      cancel-in-progress: false
+    outputs:
+      path: ${{ steps.post.outputs.path }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Turn the issue into an entry
+        id: post
+        if: github.event_name == 'issue_comment'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          python3 scripts/post.py "$GITHUB_EVENT_PATH"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add entries
+          git diff --cached --quiet || git commit -m "Post #$NUMBER: $TITLE"
+          git push
+
+      - run: python3 scripts/build.py
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Reply and close the issue
+        if: github.event_name == 'issue_comment'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NUMBER: ${{ github.event.issue.number }}
+          STATE: ${{ github.event.issue.state }}
+          URL: ${{ steps.deployment.outputs.page_url }}${{ needs.build.outputs.path }}
+        run: |
+          gh issue comment "$NUMBER" --repo "$GITHUB_REPOSITORY" --body "Posted: $URL"
+          if [ "$STATE" = open ]; then gh issue close "$NUMBER" --repo "$GITHUB_REPOSITORY"; fi

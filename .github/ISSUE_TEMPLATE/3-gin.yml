@@ -1,0 +1,98 @@
+name: "Gin"
+description: "Log a gin you have tried."
+labels: ["gin"]
+body:
+  - type: input
+    attributes:
+      label: "Distillery"
+      placeholder: "Four Pillars"
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: "Style"
+      placeholder: "London dry, Old Tom, contemporary"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "ABV"
+      placeholder: "41.8%"
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Origin"
+      placeholder: "Yarra Valley, Australia"
+    validations:
+      required: false
+  - type: markdown
+    attributes:
+      value: "### Flavour profile\n0 means absent, 5 means it dominates."
+  - type: dropdown
+    attributes:
+      label: "Juniper"
+      description: "Pine, resin, the classic gin backbone"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Citrus"
+      description: "Lemon, orange, grapefruit peel"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Floral"
+      description: "Rose, lavender, elderflower"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Herbal"
+      description: "Coriander, sage, tea"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Spice"
+      description: "Cardamom, pepper, cassia"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Earthy"
+      description: "Angelica, orris root, nuts"
+      options: ["0", "1", "2", "3", "4", "5"]
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: "Rating"
+      options: ["1 - not for me", "2 - fine", "3 - good", "4 - very good", "5 - outstanding"]
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Tasting notes"
+      placeholder: "Where you were, who recommended it, nose, palate, finish..."
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: "Photo"
+      description: "Optional. Drag an image in here; it goes at the top of the page."
+    validations:
+      required: false
+  - type: input
+    attributes:
+      label: "Link"
+      description: "Optional. The distillery's page for this gin."
+      placeholder: "https://"
+    validations:
+      required: false
