@@ -1,0 +1,26 @@
+{
+  "number": 1,
+  "title": "Ossan Sour",
+  "category": "cocktails",
+  "date": "2026-10-30",
+  "rating": 3,
+  "details": {
+    "Where": "Backspace",
+    "Base spirit": "Whiskey"
+  },
+  "profile": {
+    "Sweet": 3,
+    "Sour": 5,
+    "Bitter": 1,
+    "Boozy": 3,
+    "Herbal": 1,
+    "Fruity": 3
+  },
+  "notes": "<p dir=\"auto\">It's mostly sweet and sour, you can taste the whiskey, it's a bit like a whiskey sour but it has a bit more depth I think because of the apricot.</p>",
+  "ingredients": "<ul dir=\"auto\">\n<li>Nikka from the barrel</li>\n<li>Lillet (blanc?)</li>\n<li>apricot tea syrup</li>\n<li>lemon</li>\n<li>\"A smokey spritz\"?</li>\n</ul>",
+  "method": "<p dir=\"auto\">Shake ingredients over ice, serve up or over ice, spritz with liquid smoke I guess?</p>",
+  "image": null,
+  "link": null,
+  "ref": {},
+  "slug": "ossan-sour"
+}
